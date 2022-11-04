@@ -104,7 +104,15 @@ public class EmployeeBook {
     }
 
     public int countAverageSalary() {
-        return countTotalSalaryCost() / employees.length;
+        int numberOfSalaries = 0;
+        int sum = 0;
+        for (Employee employee : employees) {
+            if (employee != null) {
+                sum += employee.getSalary();
+                numberOfSalaries++;
+            }
+        }
+        return sum / numberOfSalaries;
     }
 
     public void printAllEmployeesFullNames() {
